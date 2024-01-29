@@ -62,70 +62,132 @@ class SearchTest extends TestCase
 
         $client->indices()->create($index);
         $docs = [
-            ['insert' => ['index' => 'movies', 'id' => 2, 'doc' =>
-                ['title' => 'Interstellar',
-                    'plot' => 'A team of explorers travel through a wormhole in space in an attempt to ensure'.
-                        ' humanity\'s survival.',
-                    'year' => 2014, 'rating' => 8.5,
-                    'meta' => ['keywords' => ['astronaut', 'relativity', 'nasa'],
-                        'genre' => ['drama', 'scifi', 'thriller']],
-                    'lat' => 51.2, 'lon' => 47.5,
-                    'advise' => 'PG-13'
-                ]
-            ]],
-            ['insert' => ['index' => 'movies', 'id' => 3, 'doc' =>
-                ['title' => 'Inception', 'plot' => 'A thief who steals corporate secrets through the use of'.
-                    ' dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.',
-                    'year' => 2010, 'rating' => 8.8,
-                    'meta' => ['keywords' => ['dream', 'thief', 'subconscious'],
-                        'genre' => ['action', 'scifi', 'thriller']],
-                    'lat' => 51.9, 'lon' => 48.5,
-                    'advise' => 'PG-13'
-                ]
-            ]],
-            ['insert' => ['index' => 'movies', 'id' => 4, 'doc' =>
-                ['title' => '1917 ', 'plot' => ' As a regiment assembles to wage war deep in enemy territory, two'.
-                    ' soldiers are assigned to race against time and deliver a message that will stop 1,600 men from'.
-                    ' walking straight into a deadly trap.',
-                    'year' => 2018, 'rating' => 8.4,
-                    'meta' => ['keywords' => ['death', ' trench'], 'genre' => ['drama', 'war']],
-                    'lat' => 51.1, 'lon' => 48.1,
-                    'advise' => 'PG-13'
-                ]
-            ]],
-            ['insert' => ['index' => 'movies', 'id' => 5, 'doc' =>
-                ['title' => 'Alien', 'plot' => ' After a space merchant vessel receives an unknown transmission as a'.
-                    ' distress call, one of the team\'s member is attacked by a mysterious life form and they soon '.
-                    'realize that its life cycle has merely begun.',
-                    'year' => 1979, 'rating' => 8.4,
-                    'meta' => ['keywords' => ['spaceship', 'monster', 'nasa'], 'genre' => ['scifi', 'horror']],
-                    'lat' => 52.2, 'lon' => 48.9,
-                    'advise' => 'R'
-                ]
-            ]],
-            ['insert' => ['index' => 'movies', 'id' => 6, 'doc' =>
-                ['title' => 'Aliens', 'plot' => ' Ellen Ripley is rescued by a deep salvage team of explorers after'.
-                    ' being in hypersleep for 57 years. The moon that the Nostromo visited has been colonized by '.
-                    'explorers, but contact is lost. This time, colonial marines have impressive firepower, but will'.
-                    ' that be enough?',
-                    'year' => 1986, 'rating' => 8.3,
-                    'meta' => ['keywords' => ['alien', 'monster', 'soldier'],
-                        'genre' => ['scifi', 'action', 'adventure']],
-                    'lat' => 51.6, 'lon' => 48.0,
-                    'advise' => 'R'
-                ]
-            ]],
-            ['insert' => ['index' => 'movies', 'id' => 10, 'doc' =>
-                ['title' => 'Alien 3', 'plot' => 'After her last encounter, without a team Ellen Ripley team of '.
-                    'explorers crash-lands on Fiorina 161, a maximum security prison. When a series of strange and '.
-                    'deadly events occur shortly after her arrival, Ripley realizes that she has brought along an '.
-                    'unwelcome visitor.',
-                    'year' => 1992, 'rating' => 6.5,
-                    'meta' => ['keywords' => ['alien', 'prison', 'android'], 'genre' => ['scifi', 'horror', 'action']],
-                    'lat' => 51.8, 'lon' => 48.2,
-                    'advise' => 'R'
-                ]
-            ]]
+            [
+                'insert' => [
+                    'index' => 'movies',
+                    'id' => 2,
+                    'doc' => [
+                        'title' => 'Interstellar',
+                        'plot' => 'A team of explorers travel through a wormhole in space in an attempt to ensure' .
+                            ' humanity\'s survival.',
+                        'year' => 2014,
+                        'rating' => 8.5,
+                        'meta' => [
+                            'keywords' => ['astronaut', 'relativity', 'nasa'],
+                            'genre' => ['drama', 'scifi', 'thriller'],
+                        ],
+                        'lat' => 51.2,
+                        'lon' => 47.5,
+                        'advise' => 'PG-13',
+                    ],
+                ],
+            ],
+            [
+                'insert' => [
+                    'index' => 'movies',
+                    'id' => 3,
+                    'doc' => [
+                        'title' => 'Inception',
+                        'plot' => 'A thief who steals corporate secrets through the use of dream-sharing technology' .
+                            ' is given the inverse task of planting an idea into the mind of a C.E.O.',
+                        'year' => 2010,
+                        'rating' => 8.8,
+                        'meta' => [
+                            'keywords' => ['dream', 'thief', 'subconscious'],
+                            'genre' => ['action', 'scifi', 'thriller'],
+                        ],
+                        'lat' => 51.9,
+                        'lon' => 48.5,
+                        'advise' => 'PG-13',
+                    ],
+                ],
+            ],
+            [
+                'insert' => [
+                    'index' => 'movies',
+                    'id' => 4,
+                    'doc' => [
+                        'title' => '1917',
+                        'plot' => ' As a regiment assembles to wage war deep in enemy territory, two soldiers are' .
+                            ' assigned to race against time and deliver a message that will stop 1,600 men from' .
+                            ' walking straight into a deadly trap.',
+                        'year' => 2018,
+                        'rating' => 8.4,
+                        'meta' => [
+                            'keywords' => ['death', ' trench'],
+                            'genre' => ['drama', 'war'],
+                        ],
+                        'lat' => 51.1,
+                        'lon' => 48.1,
+                        'advise' => 'PG-13',
+                    ],
+                ],
+            ],
+            [
+                'insert' => [
+                    'index' => 'movies',
+                    'id' => 5,
+                    'doc' => [
+                        'title' => 'Alien',
+                        'plot' => ' After a space merchant vessel receives an unknown transmission as a distress' .
+                            ' call, one of the team\'s member is attacked by a mysterious life form and they soon' .
+                            ' realize that its life cycle has merely begun.',
+                        'year' => 1979,
+                        'rating' => 8.4,
+                        'meta' => [
+                            'keywords' => ['spaceship', 'monster', 'nasa'],
+                            'genre' => ['scifi', 'horror'],
+                        ],
+                        'lat' => 52.2,
+                        'lon' => 48.9,
+                        'advise' => 'R',
+                    ],
+                ],
+            ],
+            [
+                'insert' => [
+                    'index' => 'movies',
+                    'id' => 6,
+                    'doc' => [
+                        'title' => 'Aliens',
+                        'plot' => ' Ellen Ripley is rescued by a deep salvage team of explorers after being in' .
+                            ' hypersleep for 57 years. The moon that the Nostromo visited has been colonized by' .
+                            ' explorers, but contact is lost. This time, colonial marines have impressive' .
+                            ' firepower, but will that be enough?',
+                        'year' => 1986,
+                        'rating' => 8.3,
+                        'meta' => [
+                            'keywords' => ['alien', 'monster', 'soldier'],
+                            'genre' => ['scifi', 'action', 'adventure'],
+                        ],
+                        'lat' => 51.6,
+                        'lon' => 48.0,
+                        'advise' => 'R',
+                    ],
+                ],
+            ],
+            [
+                'insert' => [
+                    'index' => 'movies',
+                    'id' => 10,
+                    'doc' => [
+                        'title' => 'Alien 3',
+                        'plot' => 'After her last encounter, without a team Ellen Ripley team of explorers' .
+                            ' crash-lands on Fiorina 161, a maximum security prison. When a series of strange and' .
+                            ' deadly events occur shortly after her arrival, Ripley realizes that she has brought' .
+                            ' along an unwelcome visitor.',
+                        'year' => 1992,
+                        'rating' => 6.5,
+                        'meta' => [
+                            'keywords' => ['alien', 'prison', 'android'],
+                            'genre' => ['scifi', 'horror', 'action'],
+                        ],
+                        'lat' => 51.8,
+                        'lon' => 48.2,
+                        'advise' => 'R',
+                    ],
+                ],
+            ],
         ];
         $client->bulk(['body' => $docs]);
 
@@ -154,6 +216,29 @@ class SearchTest extends TestCase
             sort($years);
         }
         return $years;
+    }
+
+    /**
+     * Helper method to return just the titles from the results.  This is used to validate filtering and sorting
+     * @param ResultSet $results
+     * @param boolean $sort since Manticore 4 we don't implicitly sort by id, so the results can be sorted
+     * randomly especially when there's no other implicit/explicit sorting (e.g. full-text ranking), so it makes
+     * sense to sort explicitly
+     */
+    private function titlesFromResults($results, $sort = false): array
+    {
+        $titles = [];
+        while ($results->valid()) {
+            $hit = $results->current();
+            $data = $hit->getData();
+            $titles[] = $data['title'];
+            $results->next();
+        }
+        if ($sort != false) {
+            sort($titles);
+        }
+
+        return $titles;
     }
 
     protected function getResultSet()
@@ -317,6 +402,29 @@ class SearchTest extends TestCase
     {
         $results = self::$search->sort('year')->phrase('team of explorers')->get();
         $this->assertEquals([1986,1992,2014], $this->yearsFromResults($results));
+    }
+    public function testSortMethodNyMultipleAttributesAscending()
+    {
+        $results = self::$search->filter('rating', 'gte', 8.3)->sort(['rating' => 'asc','year' => 'asc'])->get();
+        $this->assertEquals([
+            'Aliens',
+            'Alien',
+            '1917',
+            'Interstellar',
+            'Inception',
+        ], $this->titlesFromResults($results));
+    }
+
+    public function testSortMethodNyMultipleAttributesDescending()
+    {
+        $results = self::$search->filter('rating', 'gte', 8.3)->sort(['rating' => 'asc','year' => 'desc'])->get();
+        $this->assertEquals([
+            'Aliens',
+            '1917',
+            'Alien',
+            'Interstellar',
+            'Inception',
+        ], $this->titlesFromResults($results));
     }
 
     public function testSortMethodDescending()

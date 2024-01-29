@@ -154,12 +154,13 @@ $search->sort('tags','asc','max');
 Sort can also accept the first argument as an array with key-pairs as attribute -> direction:
 
 ```php
-$search->sort(['name'=>'asc']);
+$search->sort(['name'=>'asc', 'tags'=>'asc']);
 ````
+
 By default, rules are added. If second argument is set, the input array will not be added, but replace an existing rule set
 
 ```php
-$search->sort(['name'=>'desc'],true);
+$search->sort(['name'=>'asc', 'tags'=>'asc'], true);
 ````
 
 The first argument can also be a geo distance sort expression:
